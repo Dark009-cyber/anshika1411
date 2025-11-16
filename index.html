@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BIRTHDAY OF ANSHIKA  🎬✨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts for cinematic vibe -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* 
+    ===============================
+    GLOBAL STYLES & CINEMATIC BASE
+    ===============================
+    - Warm, dreamy gradients
+    - Film-like grain overlay
+    - Smooth transitions
+    */
+
+    :root {
+      --bg-gradient: radial-gradient(circle at top, #ffecd2 0%, #fcb69f 25%, #4b3b76 65%, #050716 100%);
+      --accent-gold: #ffd27f;
+      --accent-rose: #ff9ecd;
+      --accent-lavender: #b39dff;
+      --accent-blue: #131b3b;
+      --text-main: #fdf7ff;
+      --text-soft: #e0d9ff;
+      --highlight: #ffe7b8;
+      --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.5);
+      --blur-bg: blur(18px);
+      --transition-slow: 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+      --transition-med: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+      background: #020310;
+      color: var(--text-main);
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body {
+      position: relative;
+    }
+
+    /* Background canvas for particles / stars */
+    #bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: var(--bg-gradient);
+    }
+
+    /* Film grain & vignette overlay */
+    .film-grain {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 60%),
+        radial-gradient(circle at bottom, rgba(0, 0, 0, 0.9), transparent 50%),
+        repeating-linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.06),
+          rgba(255, 255, 255, 0.06) 1px,
+          rgba(0, 0, 0, 0.02) 1px,
+          rgba(0, 0, 0, 0.02) 2px
+        );
+      mix-blend-mode: soft-light;
+      opacity: 0.7;
+      animation: grainShift 6s steps(4, end) infinite;
+    }
+
+    @keyframes grainShift {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(10px, -10px); }
+      50%  { transform: translate(-5px, 5px); }
+      75%  { transform: translate(5px, 0); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .page-wrapper {
+      position: relative;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    /* Scrollbar styling for cinematic feel */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(5, 5, 15, 0.9);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #ffcf8f, #f591c6, #9b8bff);
+      border-radius: 999px;
+    }
+
+    /* Sections: base cinematic entrance */
+    section, header, footer {
+      position: relative;
+      padding: clamp(3rem, 7vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(40px);
+      filter: blur(10px);
+      transition:
+        opacity var(--transition-slow),
+        transform var(--transition-slow),
+        filter var(--transition-slow);
+    }
+
+    section.in-view,
+    header.in-view,
+    footer.in-view {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .section-title {
+      font-family: "Lora", serif;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      color: var(--highlight);
+      text-shadow: 0 0 8px rgba(255, 223, 186, 0.6);
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 247, 244, 0.7);
+      margin-bottom: 1.5rem;
+    }
+
+    .glass {
+      backdrop-filter: var(--blur-bg);
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), rgba(10, 7, 30, 0.96));
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Focus mode for narrative scene */
+    body.focus-mode .dim-when-focus {
+      filter: blur(5px) brightness(0.7);
+      transition: filter 1s ease;
+    }
+
+    /* 
+    =============================
+    HERO / OPENING CINEMATIC
+    =============================
+    */
+
+    header.hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: clamp(4rem, 8vw, 6rem);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: clamp(2rem, 5vw, 3.5rem);
+      align-items: center;
+      width: 100%;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-title-script {
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(3.2rem, 7vw, 4.8rem);
+      color: #ffe8c6;
+      letter-spacing: 0.08em;
+      text-shadow:
+        0 0 10px rgba(255, 199, 158, 0.9),
+        0 0 20px rgba(255, 182, 193, 0.7);
+      animation: titleGlow 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      from { text-shadow: 0 0 6px rgba(255, 213, 171, 0.7), 0 0 16px rgba(255, 143, 187, 0.5); }
+      to   { text-shadow: 0 0 14px rgba(255, 239, 208, 1), 0 0 26px rgba(255, 171, 212, 0.8); }
+    }
+
+    .hero-tagline {
+      margin-top: 1rem;
+      font-family: "Lora", serif;
+      font-size: 1.1rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .hero-meta {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(244, 235, 255, 0.7);
+    }
+
+    .hero-meta span {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: linear-gradient(135deg, rgba(255, 208, 163, 0.22), rgba(68, 36, 93, 0.8));
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-controls {
+      margin-top: 2.3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      border-radius: 999px;
+      padding: 0.75rem 1.6rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-image: linear-gradient(135deg, #ffd7a5, #ff9dd0, #c3b7ff);
+      color: #25152f;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.55);
+    }
+
+    .btn-primary::before,
+    .btn-ghost::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% -20%, rgba(255, 255, 255, 0.5), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .btn-primary:hover::before,
+    .btn-ghost:hover::before {
+      opacity: 1;
+    }
+
+    .btn-ghost {
+      background: rgba(5, 5, 20, 0.7);
+      color: var(--text-soft);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid currentColor;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .scroll-indicator span {
+      font-size: 0.7rem;
+    }
+
+    .scroll-mouse {
+      width: 22px;
+      height: 36px;
+      border-radius: 999px;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-mouse::after {
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      width: 4px;
+      height: 6px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      animation: scrollDot 1.5s ease-in-out infinite;
+    }
+
+    @keyframes scrollDot {
+      0%   { opacity: 0; transform: translate(-50%, 0); }
+      40%  { opacity: 1; transform: translate(-50%, 8px); }
+      100% { opacity: 0; transform: translate(-50%, 16px); }
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      padding: 2.1rem 2rem;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255, 255, 255, 0.2), transparent 60%),
+        radial-gradient(circle at 80% 100%, rgba(255, 140, 220, 0.2), transparent 55%);
+      opacity: 0.8;
+      mix-blend-mode: screen;
+      z-index: -1;
+      animation: auroraShift 16s linear infinite alternate;
+    }
+
+    @keyframes auroraShift {
+      from { transform: translate3d(-4%, -2%, 0) scale(1); }
+      to   { transform: translate3d(4%, 2%, 0) scale(1.05); }
+    }
+
+    .hero-cityline {
+      width: 100%;
+      height: 160px;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 1rem;
+      background:
+        linear-gradient(to top, rgba(5, 7, 20, 0.9) 0%, transparent 40%),
+        linear-gradient(135deg, #1c1448, #6a3c75 50%, #f5c18f);
+    }
+
+    .hero-cityline::before,
+    .hero-cityline::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+        to right,
+        transparent 0,
+        transparent 8%,
+        rgba(5, 0, 20, 0.9) 8%,
+        rgba(5, 0, 20, 0.9) 18%,
+        transparent 18%,
+        transparent 26%,
+        rgba(5, 0, 20, 0.9) 26%,
+        rgba(5, 0, 20, 0.9) 39%,
+        transparent 39%,
+        transparent 46%,
+        rgba(5, 0, 20, 0.9) 46%,
+        rgba(5, 0, 20, 0.9) 60%,
+        transparent 60%,
+        transparent 72%,
+        rgba(5, 0, 20, 0.9) 72%,
+        rgba(5, 0, 20, 0.9) 84%,
+        transparent 84%,
+        transparent 100%
+      );
+      background-size: 220px 100%;
+      bottom: 0;
+    }
+
+    .hero-cityline::after {
+      opacity: 0.7;
+      transform-origin: center bottom;
+      animation: cityParallax 18s linear infinite alternate;
+    }
+
+    @keyframes cityParallax {
+      from { transform: translateX(-16px) scale(1); }
+      to   { transform: translateX(16px) scale(1.06); }
+    }
+
+    .hero-metadata {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .hero-metadata span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-metadata span::before {
+      content: "✦";
+      font-size: 0.7rem;
+      color: var(--accent-rose);
+    }
+
+    .hero-date-tag {
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: var(--highlight);
+    }
+
+    /* 
+    ============================
+    TIMELINE / MOVIE REEL
+    ============================
+    */
+
+    .timeline {
+      margin-top: 2rem;
+    }
+
+    .timeline-inner {
+      margin-top: 1.5rem;
+    }
+
+    .reel-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.65);
+      margin-bottom: 0.3rem;
+    }
+
+    .reel-strip {
+      position: relative;
+      padding: 1rem 0;
+      overflow: hidden;
+    }
+
+    .reel-strip::before,
+    .reel-strip::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background-image: repeating-linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9) 0,
+        rgba(0, 0, 0, 0.9) 4px,
+        rgba(255, 255, 255, 0.9) 4px,
+        rgba(255, 255, 255, 0.9) 6px
+      );
+      opacity: 0.35;
+    }
+
+    .reel-strip::before {
+      top: 0;
+    }
+
+    .reel-strip::after {
+      bottom: 0;
+    }
+
+    .reel-track {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.2rem 0.4rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .reel-track::-webkit-scrollbar {
+      height: 6px;
+    }
+    .reel-track::-webkit-scrollbar-thumb {
+      background: linear-gradient(to right, #ffd29f, #ff93c3, #bfb2ff);
+      border-radius: 999px;
+    }
+
+    .reel-card {
+      scroll-snap-align: center;
+      min-width: 230px;
+      max-width: 260px;
+      padding: 1rem;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), rgba(13, 9, 40, 0.95));
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+      transform-origin: center center;
+      animation: cardFloat 6s ease-in-out infinite alternate;
+    }
+
+    .reel-card:nth-child(2) { animation-delay: 0.3s; }
+    .reel-card:nth-child(3) { animation-delay: 0.6s; }
+    .reel-card:nth-child(4) { animation-delay: 0.9s; }
+
+    @keyframes cardFloat {
+      from { transform: translateY(6px) rotate(-0.6deg); }
+      to   { transform: translateY(-6px) rotate(0.6deg); }
+    }
+
+    .reel-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.3), transparent 65%);
+      mix-blend-mode: soft-light;
+      opacity: 0.6;
+    }
+
+    .reel-photo {
+      height: 130px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), rgba(12, 9, 30, 0.9));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 0.6rem;
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+    }
+
+    .reel-title {
+      margin-top: 0.8rem;
+      font-family: "Lora", serif;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      color: var(--accent-gold);
+    }
+
+    .reel-caption {
+      margin-top: 0.4rem;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.5;
+    }
+
+    .reel-year-tag {
+      margin-top: 0.6rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* 
+    ============================
+    NARRATIVE MESSAGE / MONOLOGUE
+    ============================
+    */
+
+    .message-section .message-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+      gap: clamp(2rem, 4vw, 3rem);
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .message-section .message-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .message-box {
+      position: relative;
+      padding: 2rem 2.2rem;
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), rgba(5, 5, 20, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .message-box::before {
+      content: "INT. HEART - NIGHT";
+      position: absolute;
+      top: 0.8rem;
+      right: 1.4rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .message-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 1rem;
+    }
+
+    .typed-text {
+      font-family: "Lora", serif;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--text-main);
+      min-height: 6.5rem;
+      white-space: pre-wrap;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--highlight);
+      margin-left: 3px;
+      animation: blinkCursor 0.9s steps(2, start) infinite;
+      vertical-align: bottom;
+    }
+
+    @keyframes blinkCursor {
+      0%, 50%  { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+
+    .message-side-note {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+    }
+
+    .message-side-note strong {
+      color: var(--accent-gold);
+    }
+
+    .message-fade-hint {
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* 
+    ============================
+    LIVE CLOCK / MOMENTS COUNTER
+    ============================
+    */
+
+    .clock-inner {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: clamp(2rem, 4vw, 3rem);
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .clock-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .clock-display {
+      padding: 1.8rem 1.6rem;
+      border-radius: 20px;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), rgba(6, 6, 20, 0.98));
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .clock-digits {
+      font-family: "Lora", serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .clock-unit {
+      min-width: 90px;
+      text-align: center;
+    }
+
+    .clock-label {
+      margin-top: 0.2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .clock-caption {
+      margin-top: 1.1rem;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.6;
+    }
+
+    .clock-caption span {
+      color: var(--accent-rose);
+      font-weight: 500;
+    }
+
+    .clock-note {
+      margin-top: 0.6rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .clock-side-text {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* 
+    ============================
+    SURPRISE SCENE / COMPLIMENTS
+    ============================
+    */
+
+    .surprise-inner {
+      margin-top: 1.6rem;
+      text-align: center;
+    }
+
+    .surprise-tagline {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.4rem;
+    }
+
+    .reveal-btn {
+      margin-top: 0.8rem;
+      position: relative;
+      border-radius: 999px;
+      padding: 0.9rem 1.8rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: radial-gradient(circle at top, rgba(255, 241, 210, 0.3), rgba(5, 5, 25, 0.96));
+      color: var(--highlight);
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255, 220, 180, 0.6);
+    }
+
+    .reveal-btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.85) 40%, transparent 100%);
+      transform: translateX(-120%);
+      animation: spotlightSweep 3s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes spotlightSweep {
+      0%   { transform: translateX(-120%); }
+      50%  { transform: translateX(50%); }
+      100% { transform: translateX(120%); }
+    }
+
+    .compliment-overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(12, 8, 30, 0.95), rgba(1, 1, 5, 0.98));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition-med), visibility var(--transition-med);
+      z-index: 20;
+    }
+
+    .compliment-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .compliment-stage {
+      position: relative;
+      width: min(900px, 100% - 2.5rem);
+      padding: 2.4rem 2rem 2rem;
+      border-radius: 24px;
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.2), rgba(8, 4, 24, 0.98));
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.75);
+      overflow: hidden;
+    }
+
+    .compliment-stage::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 20% 0, rgba(255, 236, 210, 0.8), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(255, 156, 213, 0.7), transparent 40%),
+        radial-gradient(circle at 10% 100%, rgba(179, 162, 255, 0.65), transparent 50%);
+      mix-blend-mode: screen;
+      opacity: 0.7;
+      animation: stageLights 8s ease-in-out infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes stageLights {
+      from { transform: translate3d(-3%, -3%, 0); }
+      to   { transform: translate3d(3%, 3%, 0); }
+    }
+
+    .compliment-heading {
+      font-family: "Lora", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.85);
+      text-align: center;
+      margin-bottom: 1.4rem;
+    }
+
+    .compliment-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .compliment {
+      padding: 0.7rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.15), rgba(7, 5, 26, 0.96));
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--highlight);
+      opacity: 0;
+      transform: translateY(12px) scale(0.96);
+      filter: blur(6px);
+    }
+
+    .compliment.show {
+      animation: complimentIn 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    }
+
+    @keyframes complimentIn {
+      0%   { opacity: 0; transform: translateY(16px) scale(0.95); filter: blur(10px); }
+      100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+    }
+
+    .close-overlay {
+      position: absolute;
+      top: 0.9rem;
+      right: 1.1rem;
+      border: none;
+      outline: none;
+      background: rgba(2, 2, 10, 0.7);
+      color: rgba(255, 255, 255, 0.85);
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .close-overlay span {
+      margin-left: 0.4rem;
+    }
+
+    .confetti-piece {
+      position: fixed;
+      width: 8px;
+      height: 16px;
+      background: #ffcf7f;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 19;
+      transform-origin: center;
+      border-radius: 2px;
+      animation: confettiFall linear forwards;
+    }
+
+    @keyframes confettiFall {
+      0% {
+        opacity: 1;
+        transform: translate3d(var(--x-start), -10vh, 0) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translate3d(var(--x-end), 110vh, 0) rotate(540deg);
+      }
+    }
+
+    /* 
+    ============================
+    FOOTER / CREDITS
+    ============================
+    */
+
+    footer.credits {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .credits-inner {
+      padding: 1.8rem 1.2rem;
+      border-radius: 18px;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), rgba(8, 8, 25, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .credits-inner::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        transparent 0,
+        rgba(255, 255, 255, 0.18) 20%,
+        transparent 40%,
+        transparent 60%,
+        rgba(255, 255, 255, 0.18) 80%,
+        transparent 100%
+      );
+      mix-blend-mode: soft-light;
+      opacity: 0.5;
+      animation: creditRoll 12s linear infinite;
+    }
+
+    @keyframes creditRoll {
+      0%   { transform: translateX(-10%); }
+      100% { transform: translateX(10%); }
+    }
+
+    .credits-heart {
+      display: inline-block;
+      margin: 0 0.3rem;
+      animation: heartBeat 1.8s ease-in-out infinite;
+    }
+
+    @keyframes heartBeat {
+      0%   { transform: scale(1); }
+      20%  { transform: scale(1.2); }
+      40%  { transform: scale(1); }
+      60%  { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .signature {
+      display: block;
+      margin-top: 0.7rem;
+      font-family: "Great Vibes", cursive;
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      color: var(--accent-rose);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: signatureReveal 3s ease-out forwards;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes signatureReveal {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 
+    ============================
+    RESPONSIVE TWEAKS
+    ============================
+    */
+
+    @media (max-width: 600px) {
+      header, section, footer {
+        padding-inline: 1.2rem;
+      }
+      .hero-title-script {
+        text-align: center;
+      }
+      .hero-meta {
+        justify-content: center;
+      }
+      .hero-controls {
+        justify-content: center;
+      }
+      .hero-card {
+        margin-top: 1.5rem;
+      }
+      .clock-digits {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Background particles / stars -->
+  <canvas id="bg-canvas"></canvas>
+  <!-- Film grain & vignette -->
+  <div class="film-grain"></div>
+
+  <div class="page-wrapper">
+
+    <!-- =========================
+         1. HERO / OPENING SEQUENCE
+         ========================= -->
+    <header class="hero dim-when-focus" id="hero">
+      <div class="hero-inner">
+        <!-- Left: Title & Info -->
+        <div class="hero-text">
+          <div class="section-subtitle">A Journey Through Anshika’s universe</div>
+          <h1 class="hero-title-script">Happy Birthday Anshika</h1>
+
+          <p class="hero-tagline">
+            On 14 November, the lights learned how to shine like her. and so we
+            celebrate the day the world was graced with your radiant presence.
+          </p>
+
+          <div class="hero-meta">
+            <span>Birthday • 14 November</span>
+            <span>Genre • Birthday of Anshika</span>
+            <span>Starring • Anshika ✨</span>
+          </div>
+
+          <div class="hero-controls">
+            <!-- Music toggle button -->
+            <button class="btn-primary" id="music-toggle">
+              <div class="btn-icon" id="music-icon">▶</div>
+              <span id="music-label">Play Ambient Score</span>
+            </button>
+
+            <!-- Scroll to next scene -->
+            <button class="btn-ghost" id="scroll-timeline">
+              <span>Next Scene: Memories</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Cinematic city / dream card -->
+        <div class="hero-visual">
+          <div class="hero-card glass">
+            <div class="hero-cityline"></div>
+            <div class="hero-metadata">
+              <span>NAME: ANSHIKA TRIPATHI</span>
+              <span>DATE OF BIRTH : 14 NOVEMBER</span>
+              <span>ABOUT HER : A MYSTERIES PERSON WHICH IS VERY KIND AND DANGEROUS IN SAME TIME.</span>
+              <div class="hero-date-tag">14 November • The day of princess</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-mouse"></div>
+      </div>
+    </header>
+
+    <!-- =========================
+         2. TIMELINE / MOVIE REEL
+         ========================= -->
+    <section class="timeline dim-when-focus" id="timeline">
+      <h2 class="section-title">Chapters of Your Story</h2>
+      <p class="section-subtitle">A TIMELINE OF MOMENTS THAT GLOWED</p>
+
+      <div class="timeline-inner glass">
+        <p class="reel-label">Film Reel • Memories in Motion</p>
+        <div class="reel-strip">
+          <div class="reel-track">
+            <article class="reel-card">
+  <div class="reel-photo">
+    <iframe 
+      width="105%" 
+      height="105%" 
+      src="Birthday_Video_Generation_Request.mp4"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen></iframe>
+  </div>
+
+  <h3 class="reel-title">ANSHIKA</h3>
+  <p class="reel-caption">
+    HAPPY BIRTHDAY TO YOU ANSHIKA MAY YOUR DAY BE FILLED WITH LOVE JOY AND
+    LAUGHTER WISHING YOU ALL THE BEST ON YOUR SPECIAL DAY
+  </p>
+  <div class="reel-year-tag">Scene 01 •ANSHIKA VIDEO </div>
+</article>
+
+            <article class="reel-card">
+  <div class="reel-photo">
+    <iframe
+      width="105%" 
+      height="105%" 
+      src="Video_Generation_Enchanted_Birthday_Reverie.mp4"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen></iframe>
+  </div>
+
+  <h3 class="reel-title">ANSHIKA</h3>
+  <p class="reel-caption">
+    YOU ARE AN INCREDIBLE PERSON INSIDE AND OUT YOUR KINDNESS AND
+    COMPASSION SHINE THROUGH IN EVERYTHING YOU DO MAY THIS YEAR BRING
+  <div class="reel-year-tag">Scene 02 • ANSHIKA VIDEO</div>
+</article>
+
+
+            <!-- Card 3 -->
+            <article class="reel-card">
+  <div class="reel-photo">
+    <iframe
+      width="105%" 
+      height="105%" 
+      src="Text_Based_Video_Generation_Request.mp4"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen></iframe>
+  </div>
+
+  <h3 class="reel-title">ANSHIKA</h3>
+  <p class="reel-caption">
+   I HOPE YOU NEVER LOSE THAT SPARKLE IN YOUR EYES AND THE WAY YOU LIGHT UP A ROOM
+   WITH YOUR PRESENCE MAY THIS BIRTHDAY BE THE START OF AN AMAZING YEAR AHEAD
+  </p>
+  <div class="reel-year-tag">Scene 03 • ANSHIKA VIDEO </div>
+</article>
+
+            <article class="reel-card">
+  <div class="reel-photo">
+    <iframe 
+      width="105%" 
+      height="105%" 
+      src="K_Interstellar_Symphony_Generation.mp4"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen></iframe>
+  </div>
+
+  <h3 class="reel-title">ANSHIKA</h3>
+  <p class="reel-caption">
+    YOUR SMILE IS CONTAGIOUS AND YOUR POSITIVITY IS INSPIRING MAY THIS BIRTHDAY
+    BRING YOU ALL THE HAPPINESS YOUR HEART DESIRES KEEP SHINING BRIGHTLY
+  </p>
+  <div class="reel-year-tag">Scene 04 • ANSHIKA VIDEO </div>
+</article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         3 & 4. AMBIENT + NARRATIVE
+         ========================= -->
+    <section class="message-section" id="message">
+      <h2 class="section-title">Narrator’s Voice</h2>
+      <p class="section-subtitle">A NOTE FROM THE HEART</p>
+
+      <div class="message-inner">
+        <!-- Message box with typewriter effect -->
+        <div class="message-box glass">
+          <div class="message-label">Voiceover • Script Notes</div>
+          <p class="typed-text" id="typed-text"></p><span class="cursor"></span>
+        </div>
+
+        <!-- Side explanation / mood -->
+        <div class="message-side">
+          <p class="message-side-note">
+            HI ANSHIKA MAIANE BOLA THA EK GIFT DUNGA BAHUT BADA TO GIFT NAHI HAI MERA PAR SAYAD YE TUMHE YAAD RAHE AS A CLASSMATE OR FRIEND I DON'T KNOW BUT YOU ARE VERY SPECIAL SACH KAHUYOU ARE A LADY DON JO BAHUT KHATARNAK HAI PAR USASE JYADA ACHHI HAI ONCE AGAIN HAPPY BIRTHDAY ANSHIKA 
+            <strong>“You, Anshika, are not just in the story. You are the story.”</strong>
+          </p>
+          <p class="message-fade-hint">
+            Tip: Let the words sink in slowly. This is your favorite scene.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         5. LIVE CLOCK / MOMENTS
+         ========================= -->
+    <section class="clock-section dim-when-focus" id="clock">
+      <h2 class="section-title">Moments Since Your ANSHIKA UNIVERSE</h2>
+      <p class="section-subtitle">COUNTING FROM MIDNIGHT • 14 NOVEMBER</p>
+
+      <div class="clock-inner">
+        <div class="clock-display">
+          <div class="clock-digits" id="clock-digits">
+            <div class="clock-unit">
+              <div id="clock-days">00</div>
+              <div class="clock-label">Days</div>
+            </div>
+            <div class="clock-unit">
+              <div id="clock-hours">00</div>
+              <div class="clock-label">Hours</div>
+            </div>
+            <div class="clock-unit">
+              <div id="clock-minutes">00</div>
+              <div class="clock-label">Minutes</div>
+            </div>
+            <div class="clock-unit">
+              <div id="clock-seconds">00</div>
+              <div class="clock-label">Seconds</div>
+            </div>
+          </div>
+
+          <p class="clock-caption">
+            Every moment today is another frame in your story —
+            another second where the universe gets to watch
+            <span>Anshika being Anshika</span>.
+          </p>
+          <p class="clock-note">
+            From 00:00 on 14 November, your birthday isn’t just a date.
+            It’s a beautiful chapter of anyone life.
+          </p>
+        </div>
+
+        <div class="clock-side-text">
+          On this day, every second is sacred film.
+          The way you blink, laugh, think, daydream — all of it is a shot worth
+          saving. If someone ever asks, “When did the magic start?” the answer
+          is simple:
+          <br /><br />
+          <strong>At midnight on 14 November, when her light stepped into another year.</strong>
+          <br /><br />
+          This clock doesn’t just count time. It celebrates the honor of existing
+          in the same timeline as you.
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         6. SURPRISE SCENE
+         ========================= -->
+    <section class="surprise-section dim-when-focus" id="surprise">
+      <h2 class="section-title">Surprise Scene</h2>
+      <p class="section-subtitle">COMPLIMENTS & WISHES IN SPOTLIGHT</p>
+
+      <div class="surprise-inner">
+        <p class="surprise-tagline">
+          Every great movie has a twist — this one reveals what the world truly sees
+          when it looks at you.
+        </p>
+        <button class="reveal-btn" id="reveal-btn">
+          Reveal the Magic
+        </button>
+      </div>
+    </section>
+
+    <!-- Compliment Overlay -->
+    <div class="compliment-overlay" id="compliment-overlay">
+      <div class="compliment-stage">
+        <button class="close-overlay" id="close-overlay">
+          Close<span>✕</span>
+        </button>
+        <div class="compliment-heading">
+          SPOTLIGHT MOMENT • WHAT THE UNIVERSE WHISPERS ABOUT ANSHIKA
+        </div>
+        <div class="compliment-grid" id="compliment-grid">
+          <!-- Each compliment will animate in -->
+         <div class="compliment">AURAFUL – Presence like glowing light</div>
+<div class="compliment">NOBLEST – Pure heart and graceful soul</div>
+<div class="compliment">SERENE – Calming and peaceful energy</div>
+<div class="compliment">HEALING – A vibe that reduces pain</div>
+<div class="compliment">INFINITE – Endless beauty and kindness</div>
+<div class="compliment">KINDRED – A soul deeply connected</div>
+<div class="compliment">ASTRAL – Cosmic and star-like presence</div>
+
+
+    <!-- =========================
+         7. ENDING / CREDITS
+         ========================= -->
+    <footer class="credits" id="credits">
+      <div class="credits-inner glass">
+        <div>
+          Made with endless love by your best friend
+          <span class="credits-heart">❤️</span>
+        </div>
+        <span class="sacred">Kuldeep</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Background music: replace src with your own MP3 file -->
+  <audio id="bg-music" loop>
+    <!-- TODO: Replace with your actual music file -->
+    <!-- Example: <source src="ambient-lofi.mp3" type="audio/mpeg"> -->
+  </audio>
+
+  <script>
+    /*
+    =======================================
+    JAVASCRIPT:
+    - Scene transitions
+    - Background particles & mouse ripples
+    - Typewriter narrative
+    - Live clock since 14 Nov, 00:00
+    - Music toggle control
+    - Surprise overlay & confetti
+    - Focus dimming on narrative
+    =======================================
+    */
+
+    // ============================
+    // 1. IntersectionObserver for cinematic section entrances
+    // ============================
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll("header, section, footer").forEach((sec) => {
+      observer.observe(sec);
+    });
+
+    // ============================
+    // 2. Background particles / stars + mouse ripples
+    // ============================
+    const canvas = document.getElementById("bg-canvas");
+    const ctx = canvas.getContext("2d");
+    let width, height;
+    let particles = [];
+    let ripples = [];
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    function createParticles() {
+      particles = [];
+      const count = Math.min(120, Math.floor(width / 10));
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          radius: Math.random() * 1.4 + 0.3,
+          speedY: Math.random() * 0.15 + 0.05,
+          twinkle: Math.random() * Math.PI * 2
+        });
+      }
+    }
+
+    createParticles();
+
+    function addRipple(x, y) {
+      ripples.push({
+        x,
+        y,
+        radius: 0,
+        maxRadius: Math.random() * 90 + 60,
+        alpha: 0.5
+      });
+    }
+
+    canvas.addEventListener("mousemove", (e) => {
+      addRipple(e.clientX, e.clientY);
+    });
+
+    canvas.addEventListener("touchstart", (e) => {
+      const touch = e.touches[0];
+      if (!touch) return;
+      addRipple(touch.clientX, touch.clientY);
+    });
+
+    function animateBackground() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Gradient base
+      const grad = ctx.createRadialGradient(
+        width * 0.2,
+        height * 0.1,
+        0,
+        width * 0.5,
+        height * 0.8,
+        Math.max(width, height)
+      );
+      grad.addColorStop(0, "rgba(255, 236, 210, 0.16)");
+      grad.addColorStop(0.4, "rgba(252, 182, 193, 0.16)");
+      grad.addColorStop(1, "rgba(5, 3, 25, 1)");
+
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, width, height);
+
+      // Particles / stars
+      particles.forEach((p) => {
+        p.y -= p.speedY;
+        if (p.y < -10) {
+          p.y = height + 10;
+          p.x = Math.random() * width;
+        }
+        p.twinkle += 0.02;
+        const alpha = 0.3 + Math.sin(p.twinkle) * 0.2;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 240, 220, ${alpha})`;
+        ctx.fill();
+      });
+
+      // Ripples
+      ripples.forEach((r, index) => {
+        r.radius += 1.4;
+        r.alpha -= 0.006;
+        if (r.alpha <= 0) {
+          ripples.splice(index, 1);
+          return;
+        }
+
+        const gradient = ctx.createRadialGradient(
+          r.x,
+          r.y,
+          r.radius * 0.3,
+          r.x,
+          r.y,
+          r.radius
+        );
+        gradient.addColorStop(0, `rgba(255, 235, 210, ${r.alpha})`);
+        gradient.addColorStop(1, "rgba(255, 235, 210, 0)");
+
+        ctx.beginPath();
+        ctx.fillStyle = gradient;
+        ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animateBackground);
+    }
+
+    animateBackground();
+
+    // ============================
+    // 3. Music toggle (ambient score)
+    // ============================
+    const music = document.getElementById("bg-music");
+    const musicToggle = document.getElementById("music-toggle");
+    const musicLabel = document.getElementById("music-label");
+    const musicIcon  = document.getElementById("music-icon");
+
+    let isMusicPlaying = false;
+
+    musicToggle.addEventListener("click", async () => {
+      if (!isMusicPlaying) {
+        try {
+          await music.play();
+          isMusicPlaying = true;
+          musicLabel.textContent = "Pause Ambient Score";
+          musicIcon.textContent = "⏸";
+        } catch (e) {
+          // Autoplay might be blocked
+          musicLabel.textContent = "Tap again to play";
+        }
+      } else {
+        music.pause();
+        isMusicPlaying = false;
+        musicLabel.textContent = "Play Ambient Score";
+        musicIcon.textContent = "▶";
+      }
+    });
+
+    // Scroll to timeline on button click
+    const scrollBtn = document.getElementById("scroll-timeline");
+    scrollBtn.addEventListener("click", () => {
+      document.getElementById("timeline").scrollIntoView({ behavior: "smooth" });
+    });
+
+    // ============================
+    // 4. Typewriter effect for narrative
+    // ============================
+    const typedTextElement = document.getElementById("typed-text");
+    const narrativeMessage = `Dear Anshika, you are the heartbeat of every beautiful memory, the dreamer of every new adventure, and the brightest light in every night sky. Wishing you a birthday as magical as your spirit.`;
+
+    let typeIndex = 0;
+    let typingStarted = false;
+
+    const messageSection = document.getElementById("message");
+
+    const messageObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !typingStarted) {
+            typingStarted = true;
+            startTyping();
+            // Enable focus mode when reading
+            document.body.classList.add("focus-mode");
+            fadeMusicForFocus(true);
+          } else if (!entry.isIntersecting && typingStarted) {
+            // Remove focus when section is out of view
+            document.body.classList.remove("focus-mode");
+            fadeMusicForFocus(false);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    messageObserver.observe(messageSection);
+
+    function startTyping() {
+      const speed = 45; // ms per character
+      function type() {
+        if (typeIndex <= narrativeMessage.length) {
+          typedTextElement.textContent = narrativeMessage.slice(0, typeIndex);
+          typeIndex++;
+          setTimeout(type, speed);
+        }
+      }
+      type();
+    }
+
+    function fadeMusicForFocus(focusOn) {
+      if (!music) return;
+      const targetVolume = focusOn ? 0.3 : 1;
+      let step = (targetVolume - music.volume) / 20;
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i >= 20) {
+          clearInterval(interval);
+        } else {
+          music.volume = Math.min(1, Math.max(0, music.volume + step));
+          i++;
+        }
+      }, 50);
+    }
+
+    // ============================
+    // 5. Live clock since midnight, 14 November
+    // ============================
+    const daysEl    = document.getElementById("clock-days");
+    const hoursEl   = document.getElementById("clock-hours");
+    const minutesEl = document.getElementById("clock-minutes");
+    const secondsEl = document.getElementById("clock-seconds");
+
+    function pad(num) {
+      return num.toString().padStart(2, "0");
+    }
+
+    function updateClock() {
+      const now = new Date();
+
+      // Use current year; you can hardcode a specific year if you want
+      const currentYear = now.getFullYear();
+      const birthdayStart = new Date(currentYear, 10, 14, 0, 0, 0); // Month 10 = November
+
+      // If today is before 14 Nov, count since last year's 14 Nov
+      if (now < birthdayStart) {
+        birthdayStart.setFullYear(currentYear - 1);
+      }
+
+      const diff = now - birthdayStart; // in ms
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (24 * 3600));
+      const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      daysEl.textContent    = pad(days);
+      hoursEl.textContent   = pad(hours);
+      minutesEl.textContent = pad(minutes);
+      secondsEl.textContent = pad(seconds);
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // ============================
+    // 6. Surprise overlay & confetti
+    // ============================
+    const revealBtn = document.getElementById("reveal-btn");
+    const overlay = document.getElementById("compliment-overlay");
+    const closeOverlayBtn = document.getElementById("close-overlay");
+    const complimentGrid = document.getElementById("compliment-grid");
+    const compliments = Array.from(complimentGrid.querySelectorAll(".compliment"));
+
+    revealBtn.addEventListener("click", () => {
+      overlay.classList.add("active");
+      showCompliments();
+      launchConfetti();
+    });
+
+    closeOverlayBtn.addEventListener("click", () => {
+      overlay.classList.remove("active");
+      // reset compliments for next time
+      compliments.forEach((c) => c.classList.remove("show"));
+    });
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove("active");
+        compliments.forEach((c) => c.classList.remove("show"));
+      }
+    });
+
+    function showCompliments() {
+      compliments.forEach((comp, index) => {
+        setTimeout(() => {
+          comp.classList.add("show");
+        }, 200 + index * 160);
+      });
+    }
+
+    function launchConfetti() {
+      const colors = ["#ffd27f", "#ff9ecd", "#b39dff", "#ffffff"];
+
+      for (let i = 0; i < 130; i++) {
+        const piece = document.createElement("div");
+        piece.className = "confetti-piece";
+
+        const startX = Math.random() * 100;
+        const endX = startX + (Math.random() * 20 - 10);
+
+        piece.style.setProperty("--x-start", startX + "vw");
+        piece.style.setProperty("--x-end", endX + "vw");
+
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.background = color;
+
+        const duration = 3 + Math.random() * 2;
+        piece.style.animationDuration = duration + "s";
+
+        const delay = Math.random() * 0.7;
+        piece.style.animationDelay = delay + "s";
+
+        document.body.appendChild(piece);
+
+        // Cleanup
+        setTimeout(() => {
+          piece.remove();
+        }, (duration + delay) * 1000);
+      }
+    }
+
+  </script>
+</body>
+</html>
